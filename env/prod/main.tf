@@ -2,6 +2,10 @@ variable "app_name" {
   description = "The name of the application"
 }
 
+variable "api_root" {
+  description = "The root URL of the API"
+}
+
 module "resourcegroup" {
   source   = "../../modules/resourcegroup"
   name     = local.resource_group.name
@@ -34,5 +38,8 @@ module "staticwebapp" {
   location            = "eastasia"
   resource_group_name = module.resourcegroup.resource_group_name
   sku_tier            = "Free"
-  tags                = local.tags
+  app_settings = {
+    API_ROOT = var.api_root
+  }
+  tags = local.tags
 }
