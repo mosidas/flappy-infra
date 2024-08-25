@@ -39,7 +39,7 @@ module "staticwebapp" {
   resource_group_name = module.resourcegroup.resource_group_name
   sku_tier            = "Free"
   app_settings = {
-    API_ROOT = var.api_root
+    VITE_API_ROOT = var.api_root
   }
   tags = local.tags
 }
