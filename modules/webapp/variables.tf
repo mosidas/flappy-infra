@@ -1,0 +1,9 @@
+variable "location" {}
+variable "resource_group_name" {}
+variable "app_service_plan_name" {}
+variable "app_service_name" {}
+variable "os_type" {}
+variable "sku_name" {}
+variable "go_version" {}
+variable "app_settings" {}
+variable "tags" {}
