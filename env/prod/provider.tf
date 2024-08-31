@@ -9,6 +9,13 @@ terraform {
       version = "~>3.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "rg-tfstate-myweb"
+    storage_account_name = "sttfstatemywebweid"
+    container_name       = "tfstate"
+    key                  = "prod.tfstate"
+  }
 }
 
 provider "azurerm" {
